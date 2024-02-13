@@ -1,0 +1,62 @@
+[
+    {
+        "topic": "Fashion",
+        "id": 1,
+        "words": [
+            {
+                "id": 11,
+                "german": "altmodisch",
+                "transcription": "[ʔaltmodɪʃ]",
+                "english": "old-fashioned"
+            },
+            {
+                "id": 12,
+                "german": "angezogen",
+                "transcription": "[ʔangəˈtsoːgən]",
+                "english": "dressed"
+            },
+            {
+                "id": 13,
+                "german": "anprobieren",
+                "transcription": "[ˈʔanpʀoˌbiːɐ̯n]",
+                "english": "try on (clothes)"
+            },
+            {
+                "id": 14,
+                "german": "Bekleidung",
+                "transcription": "[bəˈklaedʊŋ]",
+                "english": "clothes"
+            },
+            {
+                "id": 15,
+                "german": "der Schmuck",
+                "transcription": "[ʃmʊk]",
+                "english": "the jewelry"
+            },
+            {
+                "id": 16,
+                "german": "die Sonnenbrille",
+                "transcription": "[ˈzɔnnɛnbrɪllə]",
+                "english": "the sunglasses"
+            }
+        ]
+    },
+    {
+        "topic": "Communication",
+        "id": 2,
+        "words": [
+            {
+                "id": 21,
+                "german": "hallo",
+                "transcription": "[ˈhalo:]",
+                "english": "hello"
+            },
+            {
+                "id": 22,
+                "german": "zusammen",
+                "transcription": "[tsuˈzamən]",
+                "english": "together"
+            }
+        ]
+    }
+]
