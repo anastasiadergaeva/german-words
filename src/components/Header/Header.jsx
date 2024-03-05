@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.scss'
 import logo from '../../images/german.png'
-console.log(logo);
+
 export default function Header() {
     return (
         <div className="header">

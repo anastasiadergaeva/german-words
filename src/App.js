@@ -1,8 +1,11 @@
-import Header from './components/Header/Header.jsx';
-
+// import Header from './components/Header/Header.jsx';
+// import WordListPage from './components/WordListPage/WordListPage';
+import Table from './components/Table/Table'
 function App() {
     return (
-        <Header />
+        <div className='App'>
+            <Table />
+        </div>
     );
 }
 
