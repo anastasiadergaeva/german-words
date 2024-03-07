@@ -1,2 +1,15 @@
 @import '../../variables.scss';
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+.main {
+    background-color: $maincolor;
+
+    &__name {
+        margin: 0 auto;
+        text-align: center;
+        font-family: "Itim", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 40px;
+    }
+}

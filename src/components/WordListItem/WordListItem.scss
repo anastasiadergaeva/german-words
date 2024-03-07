@@ -1,0 +1,14 @@
+@import '../../variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+.item {
+    padding: 10px 15px;
+    font-family: "Itim", cursive;
+    font-weight: 100;
+    font-size: 20px;
+    color: rgb(33, 32, 32);
+    text-align: center;
+    background-color: $maingrey;
+    border-radius: 8px;
+    border: none;
+}

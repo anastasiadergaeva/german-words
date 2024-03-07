@@ -1,13 +1,14 @@
 import Button from '../Button/Button';
+import './WordListItem.scss';
 
-const WordListItem = ({ id, german, transcription, english }) => {
+const WordListItem = ({ topic, german, transcription, english }) => {
     return (
         <tr>
-            <td>{id}</td>
-            <td>{german}</td>
-            <td>{transcription}</td>
-            <td>{english}</td>
-            <td>
+            <td className='item'>{topic}</td>
+            <td className='item'>{german}</td>
+            <td className='item'>{transcription}</td>
+            <td className='item'>{english}</td>
+            <td className='buttons'>
                 <Button text='edit' />
                 <Button text='delete' />
             </td>
