@@ -1,0 +1,34 @@
+@import '../../variables.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+.footer {
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 150px;
+    display: flex;
+    background: linear-gradient($maincolor, $headercolor);
+    gap: 30em;
+    align-items: center;
+
+    &__thanks {
+        display: flex;
+        gap: 5em;
+    }
+}
+
+.image {
+    width: 80px;
+    height: 70px;
+}
+
+.image-item {
+    width: 100%;
+    height: 100%;
+}
+
+.thankstext,
+.describing-link {
+    font-family: "Itim", cursive;
+    font-size: 20px;
+}
