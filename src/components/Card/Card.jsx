@@ -6,7 +6,7 @@ export default function Card({ german, transcription }) {
         <div className="card">
             <p className='card__word'>{german}</p>
             <p className='card__transcription'>{transcription}</p>
-            <Button text='check' />
+            <Button text='translate' />
         </div>
     )
 }

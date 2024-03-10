@@ -6,7 +6,7 @@ export default function Footer() {
         <footer className="footer">
             <div className="footer__thanks">
                 <div className="image">
-                    <img class="image-item" src={hearts} alt="hearts" />
+                    <img className="image-item" src={hearts} alt="hearts" />
                 </div>
                 <p className='thankstext'>thank you for using my app</p>
             </div>
