@@ -1,0 +1,26 @@
+@import '../../variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+.card {
+    padding: 2em;
+    background-color: $maingrey;
+    border: 2px solid rgb(70, 70, 70);
+    border-radius: 3px;
+    width: 10em;
+    height: 15em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__word {
+        font-family: "Itim", cursive;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    &__transcription {
+        font-family: "Itim", cursive;
+        font-size: 15px;
+        text-align: center;
+    }
+}

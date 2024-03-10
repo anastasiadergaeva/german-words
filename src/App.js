@@ -1,11 +1,16 @@
 import Header from './components/Header/Header.jsx';
 import WordListPage from './components/WordListPage/WordListPage';
+import TrainMode from './components/TrainMode/TrainMode.jsx';
 import './main.scss';
+
 function App() {
     return (
         <>
             <Header />
-            <WordListPage />
+            <div className='main'>
+                <WordListPage />
+                <TrainMode />
+            </div>
         </>
     );
 }
