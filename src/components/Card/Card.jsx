@@ -3,6 +3,7 @@ import Button from '../Button/Button';
 import './Card.scss';
 
 export default function Card({ german, transcription, english }) {
+    console.log(german, transcription, english);
     const [isTranslated, setIsTranslated] = useState(false);
     function handleTranslate(event) {
         switch (event.target.innerText) {
