@@ -1,5 +1,5 @@
 import hearts from '../../images/hearts.png';
-import './Footer.scss';
+import './Footer.module.scss';
 
 export default function Footer() {
     return (

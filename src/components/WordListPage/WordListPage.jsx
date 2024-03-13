@@ -1,4 +1,4 @@
-import './WordListPage.scss';
+import './WordListPage.module.scss';
 import Table from '../Table/Table';
 
 export default function WordListPage() {

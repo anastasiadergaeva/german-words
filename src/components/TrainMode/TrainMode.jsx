@@ -1,6 +1,6 @@
 import Card from '../Card/Card';
 import words from '../../data/words.json';
-import './TrainMode.scss';
+import './TrainMode.module.scss';
 
 export default function TrainMode() {
     return (

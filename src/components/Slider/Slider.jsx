@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './Slider.scss';
+import './Slider.module.scss';
 import Card from '../Card/Card';
 import rightArrow from '../../images/right-arrow.png';
 import leftArrow from '../../images/left-arrow.png';

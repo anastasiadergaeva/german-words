@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../Button/Button';
-import './Card.scss';
+import './Card.module.scss';
 
 export default function Card({ german, transcription, english }) {
     console.log(german, transcription, english);

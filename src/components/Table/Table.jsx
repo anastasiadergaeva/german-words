@@ -1,6 +1,6 @@
 import words from '../../data/words.json';
 import WordListItem from '../WordListItem/WordListItem';
-import './Table.scss';
+import './Table.module.scss';
 
 export default function Table() {
     return (

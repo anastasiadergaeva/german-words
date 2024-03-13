@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../Button/Button';
-import './WordListItem.scss';
+import './WordListItem.module.scss';
 
 const WordListItem = ({ topic, german, transcription, english }) => {
     const [isEdited, setIsEdited] = useState(false);
