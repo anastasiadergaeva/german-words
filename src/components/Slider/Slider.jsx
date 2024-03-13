@@ -1,5 +1,8 @@
 import { useState } from "react";
+import './Slider.scss';
 import Card from '../Card/Card';
+import rightArrow from '../../images/right-arrow.png';
+import leftArrow from '../../images/left-arrow.png';
 
 export default function Slider({ words }) {
     const [index, setIndex] = useState(0);
@@ -18,14 +21,18 @@ export default function Slider({ words }) {
     }
 
     return (
-        <div>
-            <button onClick={handlePrev}>Предыдущее слово</button>
+        <div className="slider">
+            <div onClick={handlePrev} className="slider__arrow slider__arrow-right">
+                <img src={leftArrow} alt="previous" className="arrow" />
+            </div>
             <Card
                 key={arrayy.id}
                 german={arrayy[index].german}
                 transcription={arrayy[index].transcription}
                 english={arrayy[index].english} />
-            <button onClick={handleNext}>Следующее слово</button>
+            <div onClick={handleNext} className="slider__arrow slider__arrow-right">
+                <img src={rightArrow} alt="next" className="arrow" />
+            </div>
         </div>
     );
 }
