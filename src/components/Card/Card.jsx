@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../Button/Button';
-import './Card.module.scss';
+import styles from './Card.module.scss';
 
 export default function Card({ german, transcription, english }) {
     console.log(german, transcription, english);
@@ -15,12 +15,12 @@ export default function Card({ german, transcription, english }) {
     }
 
     return (
-        <div className="card" onClick={handleTranslate}>
-            <p className='card__word'>{german}</p>
-            <p className='card__transcription'>{transcription}</p>
+        <div className={styles.card} onClick={handleTranslate}>
+            <p className={styles.card__word}>{german}</p>
+            <p className={styles.card__transcription}>{transcription}</p>
             {
                 isTranslated ? (
-                    <p className='card__translation'>{english}</p>
+                    <p className={styles.card__translation}>{english}</p>
                 ) : (
                     <Button text='translate' />
                 )

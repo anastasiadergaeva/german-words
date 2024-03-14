@@ -1,17 +1,17 @@
 import React from 'react';
-import './Header.module.scss'
+import styles from './Header.module.scss';
 import logo from '../../images/german.png'
 
 export default function Header() {
     return (
-        <div className="header">
-            <div className='header__logo'>
-                <img src={logo} alt="Logo" className="logo" />
+        <div className={styles.header}>
+            <div className={styles.header__logo}>
+                <img src={logo} alt="Logo" className={styles.logo} />
             </div>
-            <div className="header__links">
-                <div className='link'>word list</div>
-                <div className='link'>my words</div>
-                <div className='link'>topics</div>
+            <div className={styles.header__links}>
+                <div className={styles.link}>word list</div>
+                <div className={styles.link}>my words</div>
+                <div className={styles.link}>topics</div>
             </div>
         </div>
     )

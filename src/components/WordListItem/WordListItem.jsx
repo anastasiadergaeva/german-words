@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../Button/Button';
-import './WordListItem.module.scss';
+import styles from './WordListItem.module.scss';
 
 const WordListItem = ({ topic, german, transcription, english }) => {
     const [isEdited, setIsEdited] = useState(false);
@@ -38,32 +38,32 @@ const WordListItem = ({ topic, german, transcription, english }) => {
 
     return (
         <tr onClick={handleEdit}>
-            <td className='item'>{topic}</td>
+            <td className={styles.item}>{topic}</td>
             {isEdited ? (
-                <td className='item'>
-                    <input type="text" className='input' onChange={getValueGerman} value={valueGerman} />
+                <td className={styles.item}>
+                    <input type="text" className={styles.input} onChange={getValueGerman} value={valueGerman} />
                 </td>
             ) : (
-                <td className='item'>{valueGerman}</td>
+                <td className={styles.item}>{valueGerman}</td>
             )}
             {isEdited ? (
-                <td className='item'>
-                    <input type="text" className='input' onChange={getValueTranscription} value={valueTranscription} />
+                <td className={styles.item}>
+                    <input type="text" className={styles.input} onChange={getValueTranscription} value={valueTranscription} />
                 </td>
             ) : (
-                <td className='item'>{valueTranscription}</td>
+                <td className={styles.item}>{valueTranscription}</td>
             )}
 
             {
                 isEdited ? (
-                    <td className='item'>
-                        <input type="text" className='input' onChange={getValueEnglish} value={valueEnglish} />
+                    <td className={styles.item}>
+                        <input type="text" className={styles.input} onChange={getValueEnglish} value={valueEnglish} />
                     </td>
                 ) : (
-                    <td className='item'>{valueEnglish}</td>
+                    <td className={styles.item}>{valueEnglish}</td>
                 )
             }
-            <td className='buttons'>
+            <td className={styles.buttons}>
                 {
                     isEdited ? (
                         <Button text='save' />

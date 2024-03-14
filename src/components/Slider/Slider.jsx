@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './Slider.module.scss';
+import styles from './Slider.module.scss';
 import Card from '../Card/Card';
 import rightArrow from '../../images/right-arrow.png';
 import leftArrow from '../../images/left-arrow.png';
@@ -21,17 +21,17 @@ export default function Slider({ words }) {
     }
 
     return (
-        <div className="slider">
-            <div onClick={handlePrev} className="slider__arrow slider__arrow-right">
-                <img src={leftArrow} alt="previous" className="arrow" />
+        <div className={styles.slider}>
+            <div onClick={handlePrev} className={styles.slider__arrow}>
+                <img src={leftArrow} alt="previous" className={styles.arrow} />
             </div>
             <Card
                 key={arrayy.id}
                 german={arrayy[index].german}
                 transcription={arrayy[index].transcription}
                 english={arrayy[index].english} />
-            <div onClick={handleNext} className="slider__arrow slider__arrow-right">
-                <img src={rightArrow} alt="next" className="arrow" />
+            <div onClick={handleNext} className={styles.slider__arrow}>
+                <img src={rightArrow} alt="next" className={styles.arrow} />
             </div>
         </div>
     );

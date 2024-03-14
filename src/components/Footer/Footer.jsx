@@ -1,18 +1,18 @@
 import hearts from '../../images/hearts.png';
-import './Footer.module.scss';
+import styles from './Footer.module.scss';
 
 export default function Footer() {
     return (
-        <footer className="footer">
-            <div className="footer__thanks">
-                <div className="image">
-                    <img className="image-item" src={hearts} alt="hearts" />
+        <footer className={styles.footer}>
+            <div className={styles.footer__thanks}>
+                <div className={styles.image}>
+                    <img className={styles.image__item} src={hearts} alt="hearts" />
                 </div>
-                <p className='thankstext'>thank you for using my app</p>
+                <p className={styles.thankstext}>thank you for using my app</p>
             </div>
-            <div className="footer__link">
-                <p className='describing-link'>my github</p>
-                <div className="link"></div>
+            <div className={styles.footer__link}>
+                <p className={styles.describinglink}>my github</p>
+                <div className={styles.link}></div>
             </div>
         </footer>
     )

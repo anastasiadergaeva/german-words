@@ -1,19 +1,19 @@
 import words from '../../data/words.json';
 import WordListItem from '../WordListItem/WordListItem';
-import './Table.module.scss';
+import styles from './Table.module.scss';
 
 export default function Table() {
     return (
-        <table className='table'>
-            <thead className='table__head'>
-                <tr className='heads'>
-                    <th className='head'>topic</th>
-                    <th className='head'>german</th>
-                    <th className='head'>transcription</th>
-                    <th className='head'>english</th>
+        <table className={styles.table}>
+            <thead className={styles.table__head}>
+                <tr className={styles.heads}>
+                    <th className={styles.head}>topic</th>
+                    <th className={styles.head}>german</th>
+                    <th className={styles.head}>transcription</th>
+                    <th className={styles.head}>english</th>
                 </tr>
             </thead>
-            <tbody className='table__body'>
+            <tbody className={styles.table__body}>
                 {words.map(wordtheme => (wordtheme.words.map(word => (
                     <WordListItem
                         key={word.id}
