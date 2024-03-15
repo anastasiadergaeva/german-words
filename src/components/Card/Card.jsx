@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '../Button/Button';
 import styles from './Card.module.scss';
 
-export default function Card({ german, transcription, english }) {
-    console.log(german, transcription, english);
-    const [isTranslated, setIsTranslated] = useState(false);
+export default function Card({ german, transcription, english, isTranslated, setIsTranslated }) {
+
     function handleTranslate(event) {
         switch (event.target.innerText) {
             case 'translate':
-                return setIsTranslated(true);
+                setIsTranslated(true);
+                break;
             default:
                 console.log('ne srabotalo');
         }

@@ -6,17 +6,21 @@ import leftArrow from '../../images/left-arrow.png';
 
 export default function Slider({ words }) {
     const [index, setIndex] = useState(0);
+    const [isCardTranslated, setIsCardTranslated] = useState(false);
+
     const arrayy = words[0].concat(words[1]);
 
     const handleNext = () => {
         if (index < arrayy.length - 1) {
             setIndex(index + 1);
+            setIsCardTranslated(false);
         }
     }
 
     const handlePrev = () => {
         if (index > 0) {
             setIndex(index - 1);
+            setIsCardTranslated(false);
         }
     }
 
@@ -29,7 +33,10 @@ export default function Slider({ words }) {
                 key={arrayy.id}
                 german={arrayy[index].german}
                 transcription={arrayy[index].transcription}
-                english={arrayy[index].english} />
+                english={arrayy[index].english}
+                isTranslated={isCardTranslated}
+                setIsTranslated={setIsCardTranslated}
+            />
             <div onClick={handleNext} className={styles.slider__arrow}>
                 <img src={rightArrow} alt="next" className={styles.arrow} />
             </div>
