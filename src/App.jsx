@@ -1,23 +1,23 @@
 import Header from './components/Header/Header.jsx';
+import MainPage from './components/MainPage/MainPage.jsx';
 import Footer from './components/Footer/Footer.jsx';
-// import WordListPage from './components/WordListPage/WordListPage';
-// import TrainMode from './components/TrainMode/TrainMode.jsx';
-import Slider from './components/Slider/Slider.jsx';
 import './main.scss';
-import data from './data/words.json';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import WordListPage from './components/WordListPage/WordListPage.jsx';
+import TrainMode from './components/TrainMode/TrainMode.jsx';
 
-function App() {
-    const example = data.map(topic => (topic.words))
-    console.log(example);
+export default function App() {
     return (
         <>
-            <Header />
-            <div className='main'>
-                <Slider words={example} />
-            </div>
-            <Footer />
+            <Router>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<MainPage />} />
+                    <Route path="/wordlist" element={<WordListPage />} />
+                    <Route path="/train" element={<TrainMode />} />
+                </Routes>
+                <Footer />
+            </Router>
         </>
     );
 }
-
-export default App;
