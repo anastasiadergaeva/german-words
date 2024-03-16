@@ -1,0 +1,29 @@
+@import '../../variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 5em;
+    padding-right: 5em;
+
+    &__header {
+        font-family: "Itim", cursive;
+        font-size: 50px;
+    }
+
+    &__error {
+        font-family: "Itim", cursive;
+        font-size: 30px;
+    }
+
+    &__redirect {
+        display: inline-flex;
+    }
+
+    &__link {
+        font-family: "Itim", cursive;
+        font-size: 50px;
+    }
+}
