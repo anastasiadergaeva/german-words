@@ -4,10 +4,27 @@
 .mainpage {
     display: flex;
     flex-direction: column;
+    gap: 2em;
     align-items: center;
     font-family: "Itim", cursive;
 
     &__text {
         font-size: 20px;
     }
+
+    &__cards {
+        display: flex;
+        gap: 2em;
+    }
+
+    &__additionalinfo {
+        font-size: 20px;
+        gap: 3em;
+    }
+}
+
+.redirect__wordlist,
+.redirect__topics {
+    display: flex;
+    gap: 2em;
 }
