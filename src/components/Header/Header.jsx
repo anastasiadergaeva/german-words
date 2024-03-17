@@ -13,10 +13,10 @@ export default function Header() {
             </div>
             <div className={styles.header__links}>
                 <div className={styles.link}>
-                    <Link to='/wordlist'>word list</Link>
+                    <Link to='/wordlist' className={styles.objlink}>word list</Link>
                 </div>
                 <div className={styles.link}>
-                    <Link to='/train'>train mode</Link>
+                    <Link to='/train' className={styles.objlink}>train mode</Link>
                 </div>
                 <div className={styles.link}>topics</div>
             </div>
