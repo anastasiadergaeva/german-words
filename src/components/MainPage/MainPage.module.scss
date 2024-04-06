@@ -26,5 +26,7 @@
 .redirect__wordlist,
 .redirect__topics {
     display: flex;
+    justify-content: space-between;
     gap: 2em;
+    padding-bottom: 1em;
 }
