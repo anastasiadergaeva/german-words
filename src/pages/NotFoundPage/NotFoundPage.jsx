@@ -2,7 +2,7 @@ import styles from './NotFoundPage.module.scss'
 import BackHandIcon from '@mui/icons-material/BackHand';
 import SleepingPig from '../../images/pig.png';
 import { Link } from 'react-router-dom';
-import Button from '../Button/Button';
+import Button from '../../components/Button/Button';
 
 export default function NotFoundPage() {
     return (

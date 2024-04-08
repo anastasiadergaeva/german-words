@@ -18,7 +18,9 @@ export default function Header() {
                 <div className={styles.link}>
                     <Link to='/train' className={styles.objlink}>train mode</Link>
                 </div>
-                <div className={styles.link}>topics</div>
+                <div className={styles.link}>
+                    <Link to='/topics' className={styles.objlink}>topics</Link>
+                </div>
             </div>
         </div>
     )

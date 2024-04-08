@@ -1,7 +1,7 @@
-import Button from '../Button/Button';
+import Button from '../../components/Button/Button';
 import data from '../../data/words.json';
 import styles from './MainPage.module.scss';
-import Slider from '../Slider/Slider';
+import Slider from '../../components/Slider/Slider';
 
 export default function MainPage() {
     const dataWords = data.map(topic => (topic.words));

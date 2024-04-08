@@ -1,5 +1,5 @@
 import styles from './WordListPage.module.scss';
-import Table from '../Table/Table';
+import Table from '../../components/Table/Table';
 
 export default function WordListPage() {
     return (
