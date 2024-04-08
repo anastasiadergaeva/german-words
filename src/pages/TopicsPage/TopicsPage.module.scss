@@ -1,0 +1,20 @@
+@import '../../variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    font-family: "Itim", cursive;
+}
+
+.topics {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.5em;
+}
+
+.description {
+    font-size: 20px;
+}

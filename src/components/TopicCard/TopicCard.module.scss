@@ -1,4 +1,20 @@
+@import '../../variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
 .card {
-    width: 10em;
-    height: 12em;
+    padding: 2em;
+    background-color: $maingrey;
+    border: 2px solid rgb(70, 70, 70);
+    border-radius: 3px;
+    width: 8em;
+    height: 7em;
+
+    &__topic {
+        font-size: 1.2em;
+    }
+
+    &__count {
+        font-size: 1em;
+        color: rgb(83, 99, 78);
+    }
 }
