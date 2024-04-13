@@ -1,8 +1,10 @@
-import words from '../../data/words.json';
+import { DataContext } from '../../context/DataContext';
+import { useContext } from 'react';
 import WordListItem from '../WordListItem/WordListItem';
 import styles from './Table.module.scss';
 
 export default function Table() {
+    const { words, topics } = useContext(DataContext);
     return (
         <table className={styles.table}>
             <thead className={styles.table__head}>
@@ -14,15 +16,15 @@ export default function Table() {
                 </tr>
             </thead>
             <tbody className={styles.table__body}>
-                {words.map(wordtheme => (wordtheme.words.map(word => (
+                {words.map(word => (
                     <WordListItem
                         key={word.id}
-                        topic={wordtheme.topic}
+                        topic={topics.topic}
                         german={word.german}
                         transcription={word.transcription}
                         english={word.english}
                     />
-                ))))}
+                ))}
             </tbody>
         </table>
     )
