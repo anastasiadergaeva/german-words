@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from "react";
-import data from '../data/words.json';
 
 const DataContext = createContext();
 
@@ -20,10 +19,21 @@ const DataProvider = ({ children }) => {
     }, []);
 
     const loadWords = () => {
-        const words = data.flatMap(item => item.words);
-        const topics = data.map(item => item.topic);
-        setWords(words);
-        setTopics(topics);
+        fetch("../data/words")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch data");
+                }
+                return response.json();
+            })
+            .then(words => {
+                words.flatMap(item => setWords(item.words));
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+            });
+        // const topics = words.map(item => item.topic);
+        // setTopics(topics);
     }
 
     return (
