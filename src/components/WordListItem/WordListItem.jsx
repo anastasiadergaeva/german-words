@@ -4,9 +4,16 @@ import styles from './WordListItem.module.scss';
 
 const WordListItem = ({ topic, german, transcription, english }) => {
     const [isEdited, setIsEdited] = useState(false);
-    const [valueGerman, setValueGerman] = useState(german);
-    const [valueTranscription, setValueTranscription] = useState(transcription);
-    const [valueEnglish, setValueEnglish] = useState(english);
+
+    // const [valueGerman, setValueGerman] = useState(german);
+    // const [valueTranscription, setValueTranscription] = useState(transcription);
+    // const [valueEnglish, setValueEnglish] = useState(english);
+
+    const [value, setValue] = useState({
+        valueGerman: german,
+        valueTranscription: transcription,
+        valueEnglish: english
+    });
 
     function handleEdit(event) {
         switch (event.target.innerText) {
@@ -21,19 +28,29 @@ const WordListItem = ({ topic, german, transcription, english }) => {
         }
     }
 
+    // function getValue(event, key) {
+    //     setValue({
+    //         ...value,
+    //         [key]: event.target.value
+    //     })
+    // }
+
     function getValueGerman(event) {
-        const newValue = event.target.value;
-        setValueGerman(newValue);
+        setValue({
+            ...value, valueGerman: event.target.value
+        });
     }
 
     function getValueTranscription(event) {
-        const newValue = event.target.value;
-        setValueTranscription(newValue);
+        setValue({
+            ...value, valueTranscription: event.target.value
+        });
     }
 
     function getValueEnglish(event) {
-        const newValue = event.target.value;
-        setValueEnglish(newValue);
+        setValue({
+            ...value, valueEnglish: event.target.value
+        });
     }
 
     return (
@@ -41,26 +58,26 @@ const WordListItem = ({ topic, german, transcription, english }) => {
             <td className={styles.item}>{topic}</td>
             {isEdited ? (
                 <td className={styles.item}>
-                    <input type="text" className={styles.input} onChange={getValueGerman} value={valueGerman} />
+                    <input type="text" className={styles.input} onChange={getValueGerman} value={value.valueGerman} />
                 </td>
             ) : (
-                <td className={styles.item}>{valueGerman}</td>
+                <td className={styles.item}>{value.valueGerman}</td>
             )}
             {isEdited ? (
                 <td className={styles.item}>
-                    <input type="text" className={styles.input} onChange={getValueTranscription} value={valueTranscription} />
+                    <input type="text" className={styles.input} onChange={getValueTranscription} value={value.valueTranscription} />
                 </td>
             ) : (
-                <td className={styles.item}>{valueTranscription}</td>
+                <td className={styles.item}>{value.valueTranscription}</td>
             )}
 
             {
                 isEdited ? (
                     <td className={styles.item}>
-                        <input type="text" className={styles.input} onChange={getValueEnglish} value={valueEnglish} />
+                        <input type="text" className={styles.input} onChange={getValueEnglish} value={value.valueEnglish} />
                     </td>
                 ) : (
-                    <td className={styles.item}>{valueEnglish}</td>
+                    <td className={styles.item}>{value.valueEnglish}</td>
                 )
             }
             <td className={styles.buttons}>
