@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../Button/Button';
 import styles from './Card.module.scss';
 
-export default function Card({ german, transcription, english, isTranslated, setIsTranslated }) {
+export default function Card({ english, transcription, russian, isTranslated, setIsTranslated }) {
 
     function handleTranslate(event) {
         switch (event.target.innerText) {
@@ -16,11 +16,11 @@ export default function Card({ german, transcription, english, isTranslated, set
 
     return (
         <div className={styles.card} onClick={handleTranslate}>
-            <p className={styles.card__word}>{german}</p>
+            <p className={styles.card__word}>{english}</p>
             <p className={styles.card__transcription}>{transcription}</p>
             {
                 isTranslated ? (
-                    <p className={styles.card__translation}>{english}</p>
+                    <p className={styles.card__translation}>{russian}</p>
                 ) : (
                     <Button text='translate' />
                 )

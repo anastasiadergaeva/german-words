@@ -1,14 +1,14 @@
-import words from '../../data/words.json';
+import { DataProvider } from '../../context/DataContext';
 import styles from './TrainMode.module.scss';
 import Slider from '../Slider/Slider';
 
+
 export default function TrainMode() {
-    const example = words.map(topic => (topic.words))
     return (
-        <>
+        <DataProvider>
             <div className={styles.main}>
-                <Slider words={example} />
+                <Slider />
             </div>
-        </>
+        </DataProvider>
     );
 }
