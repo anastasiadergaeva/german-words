@@ -1,0 +1,13 @@
+@import '../../variables.scss';
+
+.form {
+    max-width: 1000px;
+    width: 100%;
+    height: 6em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: center;
+    background-color: $maingrey;
+    border-radius: 8px;
+}

@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
+import { inject, observer } from 'mobx-react';
 import Button from '../Button/Button';
 import styles from './WordListItem.module.scss';
 
-const WordListItem = ({ topic, german, transcription, english }) => {
+const WordListItem = ({ id, english, transcription, russian, deleteWord, updateData }) => {
     const [isEdited, setIsEdited] = useState(false);
 
-    // const [valueGerman, setValueGerman] = useState(german);
-    // const [valueTranscription, setValueTranscription] = useState(transcription);
-    // const [valueEnglish, setValueEnglish] = useState(english);
-
     const [value, setValue] = useState({
-        valueGerman: german,
-        valueTranscription: transcription,
-        valueEnglish: english
+        id: id,
+        english: english,
+        transcription: transcription,
+        russian: russian
     });
 
     function handleEdit(event) {
@@ -20,78 +18,80 @@ const WordListItem = ({ topic, german, transcription, english }) => {
             case 'edit':
                 return setIsEdited(true);
             case 'save':
+                updateData(value);
                 return setIsEdited(false);
             case 'delete':
-                console.log('кнопка удалить пока не рабочая!!!');
+                deleteWord(id);
                 break;
             default: console.log('не пон');
         }
     }
 
-    // function getValue(event, key) {
-    //     setValue({
-    //         ...value,
-    //         [key]: event.target.value
-    //     })
-    // }
-
-    function getValueGerman(event) {
+    function getValueEnglish(event) {
         setValue({
-            ...value, valueGerman: event.target.value
+            ...value, english: event.target.value
         });
     }
 
     function getValueTranscription(event) {
         setValue({
-            ...value, valueTranscription: event.target.value
+            ...value, transcription: event.target.value
         });
     }
 
-    function getValueEnglish(event) {
+    function getValueRussian(event) {
         setValue({
-            ...value, valueEnglish: event.target.value
+            ...value, russian: event.target.value
         });
     }
 
     return (
-        <tr onClick={handleEdit}>
-            <td className={styles.item}>{topic}</td>
+        <tr>
             {isEdited ? (
                 <td className={styles.item}>
-                    <input type="text" className={styles.input} onChange={getValueGerman} value={value.valueGerman} />
+                    <input type="text" className={styles.input} onChange={getValueEnglish} value={value.english} />
                 </td>
             ) : (
-                <td className={styles.item}>{value.valueGerman}</td>
+                <td className={styles.item}>{value.english}</td>
             )}
             {isEdited ? (
                 <td className={styles.item}>
-                    <input type="text" className={styles.input} onChange={getValueTranscription} value={value.valueTranscription} />
+                    <input type="text" className={styles.input} onChange={getValueTranscription} value={value.transcription} />
                 </td>
             ) : (
-                <td className={styles.item}>{value.valueTranscription}</td>
+                <td className={styles.item}>{value.transcription}</td>
             )}
 
             {
                 isEdited ? (
                     <td className={styles.item}>
-                        <input type="text" className={styles.input} onChange={getValueEnglish} value={value.valueEnglish} />
+                        <input type="text" className={styles.input} onChange={getValueRussian} value={value.russian} />
                     </td>
                 ) : (
-                    <td className={styles.item}>{value.valueEnglish}</td>
+                    <td className={styles.item}>{value.russian}</td>
                 )
             }
             <td className={styles.buttons}>
                 {
                     isEdited ? (
-                        <Button text='save' />
+                        <Button text='save' onClick={handleEdit} />
                     ) : (
-                        <Button text='edit' />
+                        <Button text='edit' onClick={handleEdit} />
                     )
                 }
-                <Button text='delete' />
+
+                <Button text='delete' onClick={handleEdit} />
+
             </td>
         </tr>
     )
 }
 
-export default WordListItem;
+export default inject(({ wordStore }) => {
+    const { updateData, deleteWord } = wordStore;
+
+    return {
+        updateData,
+        deleteWord,
+    };
+})(observer(WordListItem));
