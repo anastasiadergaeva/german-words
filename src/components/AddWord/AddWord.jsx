@@ -21,16 +21,16 @@ function AddWord({ addWord }) {
 
     const handleAdd = (e) => {
         e.preventDefault();
-        handleAdd(value);
-        setValue({ english: '', transcription: '', russian: '' })
+        addWord(value);
+        setValue({ english: '', transcription: '', russian: '' });
     }
 
     return (
         <div className={styles.form}>
-            <Input placeholder='english' onChange={handleChange} />
-            <Input placeholder='transcription' onChange={handleChange} />
-            <Input placeholder='russian' onChange={handleChange} />
-            <Button text='add new word' onClick={() => handleAdd} />
+            <Input name={'english'} placeholder='english' onChange={handleChange} value={value.english} />
+            <Input name={'transcription'} placeholder='transcription' onChange={handleChange} value={value.transcription} />
+            <Input name={'russian'} placeholder='russian' onChange={handleChange} value={value.russian} />
+            <Button text='add new word' onClick={handleAdd} />
         </div>
     );
 }

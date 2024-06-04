@@ -9,7 +9,7 @@ class WordStore {
 
     loadData = async () => {
         try {
-            const response = await fetch("http://itgirlschool.justmakeit.ru/api/words");
+            const response = await fetch("/api/words/");
             if (!response.ok) {
                 throw new Error("Failed to fetch words");
             }
@@ -22,7 +22,7 @@ class WordStore {
 
     deleteWord = async (id) => {
         try {
-            const response = await fetch(`http://itgirlschool.justmakeit.ru/api/words/${id}/delete`, {
+            const response = await fetch(`/api/words/${id}/delete`, {
                 method: "POST",
             });
             if (!response.ok) {
@@ -34,32 +34,27 @@ class WordStore {
         }
     };
 
-    addWord = (value) => {
-        fetch('http://itgirlschool.justmakeit.ru/api/words/add', {
-            method: 'POST',
-
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body: JSON.stringify({
-                english: value.english,
-                transcription: value.transcription,
-                russian: value.russian,
-                tags: []
-            })
-
-        })
-            .then((response) => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error('Something went wrong ...');
-                }
-            })
-            .then(() => {
-                this.loadData()
-            })
-    }
+    addWord = async (value) => {
+        try {
+            const response = await fetch(`/api/words/add`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json;charset=utf-8",
+                },
+                body: JSON.stringify({
+                    english: value.english,
+                    transcription: value.transcription,
+                    russian: value.russian,
+                }),
+            });
+            if (!response.ok) {
+                throw new Error("Failed to fetch add words");
+            }
+            this.loadData();
+        } catch (error) {
+            console.error("Error fetching words:", error);
+        }
+    };
 
     updateData = async (updatedWord) => {
         const body = {
@@ -72,7 +67,7 @@ class WordStore {
         };
 
         try {
-            const response = await fetch(`http://itgirlschool.justmakeit.ru/api/words/${updatedWord.id}/update`, {
+            const response = await fetch(`/api/words/${updatedWord.id}/update`, {
                 method: "POST",
                 body: JSON.stringify(body),
             });
