@@ -2,9 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
 .item {
+    max-width: 90px;
     padding: 10px 15px;
-    font-family: "Itim", cursive;
-    font-weight: 100;
     font-size: 20px;
     color: rgb(33, 32, 32);
     text-align: center;
@@ -14,5 +13,11 @@
 }
 
 .input {
-    padding: 15px 15px;
+    padding: 10px 10px;
+    max-width: 100%;
+}
+
+.buttons {
+    width: 200px;
+    padding: 0px;
 }

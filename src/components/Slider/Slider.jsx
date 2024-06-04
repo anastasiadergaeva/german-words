@@ -8,18 +8,8 @@ export default function Slider({ words }) {
     const [index, setIndex] = useState(0);
     const [isCardTranslated, setIsCardTranslated] = useState(false);
 
-    function mergeArrays(words) {
-        if (words.length > 1) {
-            return words.reduce((acc, val) => acc.concat(val), []);
-        } else {
-            return words[0];
-        }
-    }
-
-    const mergedArray = mergeArrays(words);
-
     const handleNext = () => {
-        if (index < mergedArray.length - 1) {
+        if (index < words.length - 1) {
             setIndex(index + 1);
             setIsCardTranslated(false);
         }
@@ -38,10 +28,10 @@ export default function Slider({ words }) {
                 <KeyboardBackspaceRounded />
             </div>
             <Card
-                key={mergedArray.id}
-                german={mergedArray[index].german}
-                transcription={mergedArray[index].transcription}
-                english={mergedArray[index].english}
+                key={words.id}
+                english={words[index].english}
+                transcription={words[index].transcription}
+                russian={words[index].russian}
                 isTranslated={isCardTranslated}
                 setIsTranslated={setIsCardTranslated}
             />

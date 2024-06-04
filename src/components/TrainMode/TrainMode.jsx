@@ -1,14 +1,27 @@
-import words from '../../data/words.json';
+import { inject, observer } from 'mobx-react';
 import styles from './TrainMode.module.scss';
 import Slider from '../Slider/Slider';
+import { useEffect } from 'react';
 
-export default function TrainMode() {
-    const example = words.map(topic => (topic.words))
+function TrainMode({ words }) {
     return (
         <>
             <div className={styles.main}>
-                <Slider words={example} />
+                <Slider words={words} />
             </div>
         </>
     );
 }
+
+export default inject(({ wordStore }) => {
+    const { words, loadData } = wordStore;
+
+    useEffect(() => {
+        loadData();
+    }, []);
+
+    return {
+        words,
+        loadData
+    }
+})(observer(TrainMode));
